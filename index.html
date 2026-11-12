@@ -3,903 +3,447 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io;">
     <title>Elevate Global Consultancy & Services</title>
-    
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="js/config.js"></script>
-
+    <!-- EXTERNAL JS SCRIPT LINK (Fixes all broken links & buttons) -->
+    <script src="js/script.js"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom External Stylesheet -->
+    <!-- Custom External CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-brand-gold selection:text-brand-900">
+<body class="min-h-screen flex flex-col justify-between selection:bg-slateTheme-700 selection:text-white">
 
-    <!-- Top Bar Notice -->
-    <div class="bg-brand-900 border-b border-white/10 text-xs py-2 px-4 text-slate-400">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <span><i class="fa-solid fa-building text-brand-gold mr-1.5"></i> Elevate Global Consultancy & Services</span>
-                <span class="hidden md:inline text-slate-600">|</span>
-                <span class="hidden md:inline"><i class="fa-solid fa-location-dot text-brand-gold mr-1.5"></i> Dubai, United Arab Emirates</span>
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="mailto:elevateitconsultancy@gmail.com" class="hover:text-brand-gold transition-colors flex items-center gap-1.5">
-                    <i class="fa-regular fa-envelope text-brand-gold"></i> elevateitconsultancy@gmail.com
-                </a>
-                <span class="text-slate-600">|</span>
-                <button data-tab="consultation" class="text-brand-gold hover:underline font-semibold">Book Consultation</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Navigation Bar -->
-    <header class="sticky top-0 z-50 glass-panel border-b border-white/10 shadow-2xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
+    <!-- Top Navigation Bar -->
+    <header class="bg-[#f2f4f4] border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
                 
-                <!-- Logo & Brand Text -->
-                <div class="flex items-center cursor-pointer" data-tab="home">
-                    <img src="assets/Company Logo.png" alt="Elevate Global Consultancy & Services Logo" class="h-12 w-auto mr-3 object-contain drop-shadow-md">
+                <!-- Logo Badge & Company Title -->
+                <div class="flex items-center gap-4 cursor-pointer" onclick="showMainPage()">
+                    <div class="w-14 h-14 rounded-full bg-slateTheme-900 border-2 border-[#d4af37] flex items-center justify-center shrink-0 shadow-sm relative overflow-hidden">
+                        <img src="assets/Company Logo 6.png" 
+                             onerror="this.src='https://placehold.co/100x100/263331/d4af37?text=ELEVATE'"
+                             alt="Elevate Global Logo" 
+                             class="w-full h-full object-cover">
+                    </div>
                     <div>
-                        <span class="font-serif text-2xl font-bold tracking-wider text-white block leading-none">ELEVATE</span>
-                        <span class="text-[10px] uppercase tracking-widest text-brand-gold font-semibold block mt-1">IT Governance & Consultancy</span>
+                        <h1 class="serif-title text-xl sm:text-2xl font-bold text-slateTheme-900 leading-tight">Elevate Global Consultancy & Services</h1>
                     </div>
                 </div>
 
-                <!-- Desktop Nav Tabs -->
-                <nav class="hidden lg:flex items-center space-x-1" id="desktopNav">
-                    <button data-tab="home" id="nav-home" class="nav-btn px-4 py-2.5 text-sm font-medium text-slate-300 hover:text-brand-gold rounded-t-md transition-all">Home</button>
-                    <button data-tab="mission" id="nav-mission" class="nav-btn px-4 py-2.5 text-sm font-medium text-slate-300 hover:text-brand-gold rounded-t-md transition-all">Our Mission</button>
-                    <button data-tab="services" id="nav-services" class="nav-btn px-4 py-2.5 text-sm font-medium text-slate-300 hover:text-brand-gold rounded-t-md transition-all">Services</button>
-                    <button data-tab="approach" id="nav-approach" class="nav-btn px-4 py-2.5 text-sm font-medium text-slate-300 hover:text-brand-gold rounded-t-md transition-all">Approach</button>
-                    <button data-tab="whoweserve" id="nav-whoweserve" class="nav-btn px-4 py-2.5 text-sm font-medium text-slate-300 hover:text-brand-gold rounded-t-md transition-all">Who We Serve</button>
+                <!-- Navigation Tabs -->
+                <nav class="flex items-center space-x-2 text-sm font-medium">
+                    <button onclick="showMainPage(); scrollToSection('hero')" id="nav-home" class="px-5 py-1.5 rounded-md bg-slateTheme-700 text-white transition-all">Home</button>
+                    <button onclick="showMainPage(); scrollToSection('solutions')" id="nav-services" class="px-4 py-1.5 rounded-md text-slateTheme-700 hover:bg-slateTheme-200 transition-all">Our Services</button>
+                    <button onclick="showMainPage(); scrollToSection('partner')" id="nav-about" class="px-4 py-1.5 rounded-md text-slateTheme-700 hover:bg-slateTheme-200 transition-all">About Us</button>
+                    <button onclick="showMainPage(); scrollToSection('contact')" id="nav-contact" class="px-4 py-1.5 rounded-md text-slateTheme-700 hover:bg-slateTheme-200 transition-all">Contact</button>
                 </nav>
 
-                <!-- Action Button -->
-                <div class="hidden lg:flex items-center">
-                    <button data-tab="consultation" class="bg-gradient-to-r from-brand-gold to-amber-600 hover:from-amber-500 hover:to-yellow-500 text-slate-950 px-5 py-2.5 rounded-lg font-semibold text-sm transition-all shadow-md hover:shadow-brand-gold/20 flex items-center gap-2">
-                        <i class="fa-solid fa-calendar-check"></i> Request Consultation
-                    </button>
-                </div>
-
-                <!-- Mobile menu button -->
-                <div class="lg:hidden flex items-center">
-                    <button id="mobileMenuBtn" data-action="toggle-mobile-menu" class="text-slate-300 hover:text-white p-2 rounded-lg bg-slate-800/80">
-                        <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Navigation Menu Drawer -->
-        <div id="mobileMenu" class="hidden lg:hidden bg-brand-900/95 border-b border-brand-gold/20 backdrop-blur-xl px-4 pt-2 pb-6 space-y-2">
-            <button data-tab="home" class="mobile-nav-btn w-full text-left px-4 py-3 rounded-lg text-slate-200 hover:bg-slate-800 font-medium">Home</button>
-            <button data-tab="mission" class="mobile-nav-btn w-full text-left px-4 py-3 rounded-lg text-slate-200 hover:bg-slate-800 font-medium">Our Mission</button>
-            <button data-tab="services" class="mobile-nav-btn w-full text-left px-4 py-3 rounded-lg text-slate-200 hover:bg-slate-800 font-medium">Services Offered</button>
-            <button data-tab="approach" class="mobile-nav-btn w-full text-left px-4 py-3 rounded-lg text-slate-200 hover:bg-slate-800 font-medium">Approach</button>
-            <button data-tab="whoweserve" class="mobile-nav-btn w-full text-left px-4 py-3 rounded-lg text-slate-200 hover:bg-slate-800 font-medium">Who We Serve</button>
-            
-            <div class="pt-2 border-t border-slate-800">
-                <button data-tab="consultation" class="w-full bg-brand-gold text-slate-950 py-3 rounded-lg font-semibold text-center">Request Consultation</button>
             </div>
         </div>
     </header>
 
-    <!-- Main Content Area -->
+    <!-- Main Content Container -->
     <main class="flex-grow">
 
-        <!-- TAB 1: HOME -->
-        <section id="tab-home" class="tab-content transition-opacity duration-300">
-            <!-- Hero Section -->
-            <div class="relative py-12 lg:py-16 overflow-hidden bg-gradient-to-b from-brand-900 via-slate-950 to-brand-900 border-b border-white/5">
-                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]"></div>
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                        <!-- Left Hero Column -->
-                        <div class="lg:col-span-6 space-y-6">
-                            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel border border-brand-gold/30 text-brand-gold text-xs font-semibold uppercase tracking-wider">
-                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                                IT Governance
-                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                                Delivery Assurance
-                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                                Fractional Leadership
-                            </div>
-                            <h1 class="text-3xl sm:text-4xl lg:text-4xl font-serif font-bold text-white tracking-tight leading-tight">
-                                Business strategy, <br>
-                                <span class="gold-gradient-text">engineered into technical execution.</span>
-                            </h1>
-                            <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-light">
-                                Elevate Global Consultancy & Services is a senior advisory practice for mid-market and enterprise organizations. We put governance, delivery discipline and technology leadership around the programmes your business depends on — so they land on time, on budget and audit-ready.
-                            </p>
-                            
-                            <div class="pt-2 flex flex-wrap gap-4">
-                                <button data-tab="consultation" class="bg-gradient-to-r from-brand-gold to-amber-600 hover:from-amber-500 hover:to-yellow-500 text-slate-950 font-bold px-7 py-3.5 rounded-lg shadow-lg hover:shadow-brand-gold/30 transition-all flex items-center gap-3">
-                                    <span>Start Mandate Assessment</span>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </button>
-                                <button data-tab="services" class="glass-panel text-slate-200 hover:text-brand-gold border border-slate-700 hover:border-brand-gold/50 font-semibold px-7 py-3.5 rounded-lg transition-all">
-                                    Explore Core Mandates
-                                </button>
-                            </div>
-                        </div>
+        <!-- MAIN VIEW WRAPPER -->
+        <div id="mainView">
 
-                        <!-- Right Column Image: IT Governance Roadmap -->
-                        <div class="lg:col-span-6 flex justify-center">
-                            <div class="glass-panel p-2.5 rounded-2xl border border-brand-gold/30 shadow-2xl relative overflow-hidden group hover:border-brand-gold/60 transition-all">
-                                <img src="assets/Background Image.png" alt="IT Governance and Consultancy Roadmap" class="rounded-xl w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-500">
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Three Core Pillars Value Propositions -->
-            <div class="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-8">
-                    <h2 class="text-3xl font-serif font-bold text-white mb-2">Governed Delivery Outcomes</h2>
-                    <p class="text-slate-400">We replace subjective status updates with verifiable evidence across all three delivery metrics.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="glass-card p-8 rounded-2xl relative overflow-hidden group">
-                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 border border-brand-gold/30 text-brand-gold flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-clock-rotate-left"></i>
-                        </div>
-                        <h3 class="text-xl font-serif font-bold text-white mb-3">On Time</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            Dated delivery plans with named owners, weekly reporting and early-warning RAID discipline to prevent schedule slippage before it happens.
-                        </p>
-                        <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-brand-gold font-mono flex items-center gap-2">
-                            <i class="fa-solid fa-check"></i> Milestone Control Matrix
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-8 rounded-2xl relative overflow-hidden group">
-                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 border border-brand-gold/30 text-brand-gold flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-vault"></i>
-                        </div>
-                        <h3 class="text-xl font-serif font-bold text-white mb-3">Within Budget</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            Costed scope, formal change control and strict vendor accountability established from the very first week of our engagement.
-                        </p>
-                        <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-brand-gold font-mono flex items-center gap-2">
-                            <i class="fa-solid fa-check"></i> Commercial Leakage Prevention
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-8 rounded-2xl relative overflow-hidden group">
-                        <div class="w-14 h-14 rounded-xl bg-brand-gold/10 border border-brand-gold/30 text-brand-gold flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-file-contract"></i>
-                        </div>
-                        <h3 class="text-xl font-serif font-bold text-white mb-3">Audit-Ready</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            Documented controls and concrete evidence trails that hold up rigorously to internal audit, external regulators, and board inquiries.
-                        </p>
-                        <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-brand-gold font-mono flex items-center gap-2">
-                            <i class="fa-solid fa-check"></i> Regulatory Evidence Vault
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TAB 2: OUR MISSION -->
-        <section id="tab-mission" class="tab-content hidden transition-opacity duration-300 py-8">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="max-w-3xl mb-8">
-                    <span class="text-brand-gold text-xs font-bold uppercase tracking-widest block mb-2">Our Mission</span>
-                    <h1 class="text-3xl sm:text-2xl font-serif font-bold text-white leading-tight">
-                        One accountable team between the business case and the build.
-                    </h1>
-                </div>
-
-                <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-brand-gold/20 mb-16">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                        <div class="lg:col-span-7 space-y-4">
-                            <h3 class="text-2xl font-serif font-semibold text-white">Bridging The High-Stakes Delivery Gap</h3>
-                            <p class="text-slate-300 leading-relaxed">
-                                Technology programmes rarely fail on engineering. They fail in the gap between what the business asked for and what the delivery team was told to build — a gap that shows up later as slipped dates, grown budgets and controls nobody owns.
-                            </p>
-                            <p class="text-slate-300 leading-relaxed">
-                                We sit on both sides of that gap. Ambition is translated into a costed, sequenced plan; delivery is governed against it with the evidence the board, the auditor and the regulator will ask for. The result is delivery you can commit to — on time and within budget.
-                            </p>
-                        </div>
-                        <div class="lg:col-span-5 flex justify-center">
-                            <div class="glass-panel p-2.5 rounded-2xl border border-brand-gold/30 shadow-2xl relative overflow-hidden group hover:border-brand-gold/60 transition-all">
-                                <img src="assets/Bridging Strategy to Execution.png" alt="Bridging The High-Stakes Delivery Gap Roadmap" class="rounded-xl w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-500">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-16">
-                    <h3 class="text-2xl font-serif font-bold text-white mb-6 text-center">Unmonitored Projects vs. Elevate Governed Delivery</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="p-6 rounded-2xl bg-rose-950/20 border border-rose-900/40 space-y-4">
-                            <div class="flex items-center gap-3 text-rose-400 font-semibold border-b border-rose-900/30 pb-3">
-                                <i class="fa-solid fa-triangle-exclamation"></i>
-                                <span>Without Elevate Governance</span>
-                            </div>
-                            <ul class="space-y-3 text-sm text-slate-300">
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-rose-500 mt-1"></i><span>Vague requirements lead to endless scope creep and budget expansion</span></li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-rose-500 mt-1"></i><span>Vendor misalignments surfaced only when milestone dates are missed</span></li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-rose-500 mt-1"></i><span>Auditors reject undocumented architecture and missing control evidence</span></li>
-                            </ul>
-                        </div>
-
-                        <div class="p-6 rounded-2xl bg-emerald-950/20 border border-emerald-900/40 space-y-4">
-                            <div class="flex items-center gap-3 text-emerald-400 font-semibold border-b border-emerald-900/30 pb-3">
-                                <i class="fa-solid fa-shield-check"></i>
-                                <span>With Elevate Governance</span>
-                            </div>
-                            <ul class="space-y-3 text-sm text-slate-300">
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i><span>Costed roadmap with explicit dependencies and named owners</span></li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i><span>Rigorous weekly RAID tracking and active change control protocol</span></li>
-                                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-1"></i><span>Continuous evidence capture ready for board and regulatory signoff</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TAB 3: SERVICES OFFERED -->
-        <section id="tab-services" class="tab-content hidden transition-opacity duration-300 py-8">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="max-w-3xl mb-8">
-                    <span class="text-brand-gold text-xs font-bold uppercase tracking-widest block mb-2">Services Offered</span>
-                    <h1 class="text-3xl sm:text-3xl font-serif font-bold text-white mb-4">What We Do</h1>
-                    <p class="text-slate-300 leading-relaxed">
-                        We help growing businesses build, secure, and scale their IT infrastructure. From strategic technology consulting and cloud migration to automated workflows and cybersecurity, we provide end-to-end IT solutions designed to keep your business running smoothly, securely, and efficiently.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Service 01 -->
-                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-center mb-4">
-                                <span class="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-2.5 py-1 rounded border border-brand-gold/20">01</span>
-                                <i class="fa-solid fa-diagram-project text-slate-400"></i>
-                            </div>
-                            <h3 class="text-lg font-serif font-bold text-white mb-2">IT Project Management & Service Delivery</h3>
-                            <p class="text-xs text-brand-gold font-medium mb-3">On-Time, In-Scope, and Budget-Aligned Technology Execution</p>
-                            <p class="text-slate-300 text-xs leading-relaxed mb-6">
-                                Turn complex technology initiatives into smooth, predictable outcomes. From infrastructure upgrades and cloud rollouts to enterprise tool deployments, we provide end-to-end project management, stakeholder alignment, and risk mitigation.
-                            </p>
-                        </div>
-                        <button data-service="IT Project Management & Service Delivery" class="w-full bg-slate-800 hover:bg-brand-gold hover:text-slate-950 text-slate-200 text-xs font-semibold py-2.5 rounded-lg transition-colors border border-slate-700">
-                            Request This Mandate
-                        </button>
-                    </div>
-
-                    <!-- Service 02 -->
-                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-center mb-4">
-                                <span class="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-2.5 py-1 rounded border border-brand-gold/20">02</span>
-                                <i class="fa-solid fa-chess-king text-slate-400"></i>
-                            </div>
-                            <h3 class="text-lg font-serif font-bold text-white mb-2">IT Strategy & Technology Advisory</h3>
-                            <p class="text-xs text-brand-gold font-medium mb-3">Align Your Technology with Strategic Business Growth</p>
-                            <p class="text-slate-300 text-xs leading-relaxed mb-6">
-                                We bridge the gap between business objectives and technology execution. By evaluating your existing infrastructure, optimizing IT budgets, and designing clear technical roadmaps, we ensure every tech investment delivers measurable ROI.
-                            </p>
-                        </div>
-                        <button data-service="IT Strategy & Technology Advisory" class="w-full bg-slate-800 hover:bg-brand-gold hover:text-slate-950 text-slate-200 text-xs font-semibold py-2.5 rounded-lg transition-colors border border-slate-700">
-                            Request This Mandate
-                        </button>
-                    </div>
-
-                    <!-- Service 03 -->
-                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-center mb-4">
-                                <span class="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-2.5 py-1 rounded border border-brand-gold/20">03</span>
-                                <i class="fa-solid fa-cloud-bolt text-slate-400"></i>
-                            </div>
-                            <h3 class="text-lg font-serif font-bold text-white mb-2">Cloud Infrastructure Management</h3>
-                            <p class="text-xs text-brand-gold font-medium mb-3">Scalable, Secure, and High-Performance Cloud Solutions</p>
-                            <p class="text-slate-300 text-xs leading-relaxed mb-6">
-                                Modernize your workplace with seamless cloud migrations and enterprise-grade infrastructure. We design, deploy, and optimize hybrid, multi-cloud, and on-premises environments.
-                            </p>
-                        </div>
-                        <button data-service="Cloud Infrastructure Management" class="w-full bg-slate-800 hover:bg-brand-gold hover:text-slate-950 text-slate-200 text-xs font-semibold py-2.5 rounded-lg transition-colors border border-slate-700">
-                            Request This Mandate
-                        </button>
-                    </div>
-
-                    <!-- Service 04 -->
-                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-center mb-4">
-                                <span class="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-2.5 py-1 rounded border border-brand-gold/20">04</span>
-                                <i class="fa-solid fa-robot text-slate-400"></i>
-                            </div>
-                            <h3 class="text-lg font-serif font-bold text-white mb-2">Process Automation & Custom Development</h3>
-                            <p class="text-xs text-brand-gold font-medium mb-3">Streamline Operations and Eliminate Manual Workflows</p>
-                            <p class="text-slate-300 text-xs leading-relaxed mb-6">
-                                Transform repetitive manual tasks into efficient, automated workflows. We build tailored internal tools, custom scripts, and data reporting solutions that save hundreds of operational hours.
-                            </p>
-                        </div>
-                        <button data-service="Process Automation & Custom Development" class="w-full bg-slate-800 hover:bg-brand-gold hover:text-slate-950 text-slate-200 text-xs font-semibold py-2.5 rounded-lg transition-colors border border-slate-700">
-                            Request This Mandate
-                        </button>
-                    </div>
-
-                    <!-- Service 05 -->
-                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-center mb-4">
-                                <span class="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-2.5 py-1 rounded border border-brand-gold/20">05</span>
-                                <i class="fa-solid fa-headset text-slate-400"></i>
-                            </div>
-                            <h3 class="text-lg font-serif font-bold text-white mb-2">Managed Service & Support (MSP)</h3>
-                            <p class="text-xs text-brand-gold font-medium mb-3">Reliable, 24/7 IT Operations and System Maintenance</p>
-                            <p class="text-slate-300 text-xs leading-relaxed mb-6">
-                                Focus on growing your business while we handle your technology. Our proactive managed IT services offer round-the-clock system monitoring, quick incident response, and ongoing support.
-                            </p>
-                        </div>
-                        <button data-service="Managed Service & Support (MSP)" class="w-full bg-slate-800 hover:bg-brand-gold hover:text-slate-950 text-slate-200 text-xs font-semibold py-2.5 rounded-lg transition-colors border border-slate-700">
-                            Request This Mandate
-                        </button>
-                    </div>
-
-                    <!-- Service 06 -->
-                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-center mb-4">
-                                <span class="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-2.5 py-1 rounded border border-brand-gold/20">06</span>
-                                <i class="fa-solid fa-user-shield text-slate-400"></i>
-                            </div>
-                            <h3 class="text-lg font-serif font-bold text-white mb-2">Cyber Security & Compliance</h3>
-                            <p class="text-xs text-brand-gold font-medium mb-3">Proactive Defense and Regulatory Compliance</p>
-                            <p class="text-slate-300 text-xs leading-relaxed mb-6">
-                                Protect your business-critical data against evolving cyber threats with comprehensive risk assessments, endpoint protection, and continuous compliance management.
-                            </p>
-                        </div>
-                        <button data-service="Cyber Security & Compliance" class="w-full bg-slate-800 hover:bg-brand-gold hover:text-slate-950 text-slate-200 text-xs font-semibold py-2.5 rounded-lg transition-colors border border-slate-700">
-                            Request This Mandate
-                        </button>
-                    </div>
-
-                    <!-- Service 07 -->
-                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-center mb-4">
-                                <span class="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-2.5 py-1 rounded border border-brand-gold/20">07</span>
-                                <i class="fa-solid fa-eye text-slate-400"></i>
-                            </div>
-                            <h3 class="text-lg font-serif font-bold text-white mb-2">IP Camera</h3>
-                            <p class="text-xs text-brand-gold font-medium mb-3">Secure your business 24/7 with cost-effective IP surveillance</p>
-                            <p class="text-slate-300 text-xs leading-relaxed mb-6">
-                                Move beyond legacy analog cameras to high-definition IP solutions. Elevate delivers cost-effective installation, multi-site remote management, and smart video analytics across Dubai.
-                            </p>
-                        </div>
-                        <button data-service="IP Camera" class="w-full bg-slate-800 hover:bg-brand-gold hover:text-slate-950 text-slate-200 text-xs font-semibold py-2.5 rounded-lg transition-colors border border-slate-700">
-                            Request This Mandate
-                        </button>
-                    </div>
-
-                    <!-- Service 08 -->
-                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-center mb-4">
-                                <span class="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-2.5 py-1 rounded border border-brand-gold/20">08</span>
-                                <i class="fa-solid fa-wand-magic-sparkles text-slate-400"></i>
-                            </div>
-                            <h3 class="text-lg font-serif font-bold text-white mb-2">Endpoint Management & Modern Deployment</h3>
-                            <p class="text-xs text-brand-gold font-medium mb-3">Zero-Touch Provisioning with Microsoft Autopilot & Intune</p>
-                            <p class="text-slate-300 text-xs leading-relaxed mb-6">
-                                Streamline your hardware lifecycle with automated device enrollment and unified endpoint security via Microsoft Intune and Autopilot.
-                            </p>
-                        </div>
-                        <button data-service="Endpoint Management & Modern Deployment" class="w-full bg-slate-800 hover:bg-brand-gold hover:text-slate-950 text-slate-200 text-xs font-semibold py-2.5 rounded-lg transition-colors border border-slate-700">
-                            Request This Mandate
-                        </button>
-                    </div>
-
-                    <!-- Service 09 -->
-                    <div class="glass-card p-8 rounded-2xl flex flex-col justify-between">
-                        <div>
-                            <div class="flex justify-between items-center mb-4">
-                                <span class="text-xs font-mono font-bold text-brand-gold bg-brand-gold/10 px-2.5 py-1 rounded border border-brand-gold/20">09</span>
-                                <i class="fa-solid fa-cloud-arrow-down text-slate-400"></i>
-                            </div>
-                            <h3 class="text-lg font-serif font-bold text-white mb-2">Microsoft Office 365 Solutions</h3>
-                            <p class="text-xs text-brand-gold font-medium mb-3">Empower Collaboration with Modern Cloud Productivity</p>
-                            <p class="text-slate-300 text-xs leading-relaxed mb-6">
-                                Transform your workforce operations with seamless Microsoft 365 deployments, advanced threat protection, and automated cloud administration.
-                            </p>
-                        </div>
-                        <button data-service="Microsoft Office 365 Solutions" class="w-full bg-slate-800 hover:bg-brand-gold hover:text-slate-950 text-slate-200 text-xs font-semibold py-2.5 rounded-lg transition-colors border border-slate-700">
-                            Request This Mandate
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TAB 4: APPROACH -->
-        <section id="tab-approach" class="tab-content hidden transition-opacity duration-300 py-8">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- 1. HERO SECTION -->
+            <section id="hero" class="relative min-h-[520px] lg:min-h-[580px] flex items-center justify-start overflow-hidden bg-slateTheme-900">
+                <img src="assets/hero-boardroom.jpg" 
+                     onerror="this.src='https://placehold.co/1800x800/344341/FFFFFF?text=Elevate+Global+Boardroom'"
+                     alt="Elevate Global Boardroom Window View" 
+                     class="absolute inset-0 w-full h-full object-cover">
                 
-                <div class="max-w-3xl mb-8">
-                    <span class="text-brand-gold text-xs font-bold uppercase tracking-widest block mb-2">Our Methodology</span>
-                    <h1 class="text-3xl sm:text-3xl font-serif font-bold text-white mb-4">How We Work</h1>
-                    <p class="text-xl text-brand-gold font-serif">Diagnose, Design, Execute, Assure.</p>
-                    <p class="text-slate-300 mt-2 leading-relaxed">
-                        The same four-stage model underpins every mandate, whether we are governing one programme or standing up an entire technology function.
-                    </p>
-                </div>
+                <div class="absolute inset-0 hero-overlay"></div>
 
-                <!-- 4 Stage Process Timeline -->
-                <div class="space-y-8 relative">
-                    <!-- Stage 01 -->
-                    <div class="glass-panel p-8 rounded-2xl border-l-4 border-l-brand-gold relative">
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-                            <div class="lg:col-span-3">
-                                <span class="text-sm font-mono text-brand-gold font-bold uppercase tracking-widest">Stage 01</span>
-                                <h3 class="text-2xl font-serif font-bold text-white mt-1">Diagnose</h3>
-                            </div>
-                            <div class="lg:col-span-6">
-                                <p class="text-slate-300 text-sm leading-relaxed">
-                                    A structured review of your strategy, delivery portfolio and controls. We interview your leaders, test the evidence and report what is really happening.
-                                </p>
-                            </div>
-                            <div class="lg:col-span-3 bg-brand-900/90 p-4 rounded-xl border border-slate-800">
-                                <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-1">Key Deliverable</span>
-                                <span class="text-xs font-semibold text-white flex items-center gap-2">
-                                    <i class="fa-solid fa-file-lines text-brand-gold"></i>
-                                    Findings report and prioritized roadmap
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stage 02 -->
-                    <div class="glass-panel p-8 rounded-2xl border-l-4 border-l-brand-gold relative">
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-                            <div class="lg:col-span-3">
-                                <span class="text-sm font-mono text-brand-gold font-bold uppercase tracking-widest">Stage 02</span>
-                                <h3 class="text-2xl font-serif font-bold text-white mt-1">Design</h3>
-                            </div>
-                            <div class="lg:col-span-6">
-                                <p class="text-slate-300 text-sm leading-relaxed">
-                                    The target operating model, governance model and delivery plan are defined with named owners, dates and cost.
-                                </p>
-                            </div>
-                            <div class="lg:col-span-3 bg-brand-900/90 p-4 rounded-xl border border-slate-800">
-                                <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-1">Key Deliverable</span>
-                                <span class="text-xs font-semibold text-white flex items-center gap-2">
-                                    <i class="fa-solid fa-compass-drafting text-brand-gold"></i>
-                                    Target operating model and costed delivery plan
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stage 03 -->
-                    <div class="glass-panel p-8 rounded-2xl border-l-4 border-l-brand-gold relative">
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-                            <div class="lg:col-span-3">
-                                <span class="text-sm font-mono text-brand-gold font-bold uppercase tracking-widest">Stage 03</span>
-                                <h3 class="text-2xl font-serif font-bold text-white mt-1">Execute</h3>
-                            </div>
-                            <div class="lg:col-span-6">
-                                <p class="text-slate-300 text-sm leading-relaxed">
-                                    We run or oversee delivery against that plan, with weekly reporting, RAID discipline and no unmanaged change.
-                                </p>
-                            </div>
-                            <div class="lg:col-span-3 bg-brand-900/90 p-4 rounded-xl border border-slate-800">
-                                <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-1">Key Deliverable</span>
-                                <span class="text-xs font-semibold text-white flex items-center gap-2">
-                                    <i class="fa-solid fa-chart-line text-brand-gold"></i>
-                                    Weekly delivery reporting and governance pack
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stage 04 -->
-                    <div class="glass-panel p-8 rounded-2xl border-l-4 border-l-brand-gold relative">
-                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-                            <div class="lg:col-span-3">
-                                <span class="text-sm font-mono text-brand-gold font-bold uppercase tracking-widest">Stage 04</span>
-                                <h3 class="text-2xl font-serif font-bold text-white mt-1">Assure</h3>
-                            </div>
-                            <div class="lg:col-span-6">
-                                <p class="text-slate-300 text-sm leading-relaxed">
-                                    Independent assurance, KPI reporting and a clean handover so the capability stays with your team.
-                                </p>
-                            </div>
-                            <div class="lg:col-span-3 bg-brand-900/90 p-4 rounded-xl border border-slate-800">
-                                <span class="text-[10px] uppercase tracking-wider text-slate-400 block mb-1">Key Deliverable</span>
-                                <span class="text-xs font-semibold text-white flex items-center gap-2">
-                                    <i class="fa-solid fa-award text-brand-gold"></i>
-                                    Assurance review and capability handover
-                                </span>
-                            </div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 w-full">
+                    <div class="max-w-2xl space-y-6">
+                        <h2 class="serif-title text-4xl sm:text-5xl lg:text-6xl font-normal text-white leading-tight">
+                            Empowering your business to <span class="font-bold">thrive</span> and <span class="italic font-serif">elevate</span>
+                        </h2>
+                        <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-light">
+                            We are a multi-disciplinary consultancy practice in the UAE delivering expert IT solutions, accounting and taxation, event management, digital marketing, and corporate training.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <button onclick="scrollToSection('solutions')" class="btn-slate px-6 py-3 rounded-md text-sm font-medium shadow-md">
+                                Our services
+                            </button>
+                            <button onclick="scrollToSection('partner')" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-6 py-3 rounded-md text-sm font-medium backdrop-blur-sm transition-all">
+                                About us
+                            </button>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- From Request to Receipt Grid -->
-                <div class="mt-12">
-                    <h2 class="text-2xl font-serif font-bold text-white mb-8 border-b border-slate-800 pb-4">
-                        From request to receipt
-                    </h2>
-
-                    <div class="glass-panel p-8 sm:p-8 rounded-3xl border border-brand-gold/20">
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <div>
-                                <span class="text-xs font-mono font-bold text-brand-gold uppercase">Step 01</span>
-                                <h3 class="text-lg font-serif font-semibold text-white mt-1 mb-2">Request a consultation</h3>
-                                <p class="text-xs text-slate-300 leading-relaxed">
-                                    Tell us the mandate. You receive an official reference number immediately upon submission.
-                                </p>
-                            </div>
-                            <div>
-                                <span class="text-xs font-mono font-bold text-brand-gold uppercase">Step 02</span>
-                                <h3 class="text-lg font-serif font-semibold text-white mt-1 mb-2">Scope and proposal</h3>
-                                <p class="text-xs text-slate-300 leading-relaxed">
-                                    We confirm the approach, timeline and fee in writing within five business days.
-                                </p>
-                            </div>
-                            <div>
-                                <span class="text-xs font-mono font-bold text-brand-gold uppercase">Step 03</span>
-                                <h3 class="text-lg font-serif font-semibold text-white mt-1 mb-2">Invoice and payment</h3>
-                                <p class="text-xs text-slate-300 leading-relaxed">
-                                    Your invoice is issued as per project milestone.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- TAB 5: WHO WE SERVE -->
-        <section id="tab-whoweserve" class="tab-content hidden transition-opacity duration-300 py-8">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="max-w-3xl mb-8">
-                    <span class="text-brand-gold text-xs font-bold uppercase tracking-widest block mb-2">Client Profile</span>
-                    <h1 class="text-3xl sm:text-3xl font-serif font-bold text-white mb-4">Built for mid-market and enterprise complexity.</h1>
-                    <p class="text-slate-300 leading-relaxed text-lg">
-                        Our clients are organizations where technology carries real operational and regulatory weight: typically <strong>200 to 5,000+ people</strong>, running a portfolio of programmes, with a board that expects evidence rather than assurances.
-                    </p>
-                </div>
-
-                <!-- When Clients Call Us (4 Triggers) -->
-                <div class="mb-8">
-                    <h2 class="text-2xl font-serif font-bold text-white mb-8 border-b border-slate-800 pb-4">
-                        When clients call us
-                    </h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <div class="glass-card p-6 rounded-2xl">
-                            <span class="text-2xl font-mono font-bold text-brand-gold block mb-3">01</span>
-                            <h3 class="text-lg font-serif font-bold text-white mb-2">A programme has slipped</h3>
-                            <p class="text-xs text-slate-300 leading-relaxed">
-                                Dates have moved, cost has grown or the board is asking harder questions that require fast, evidence-based answers.
-                            </p>
-                        </div>
-
-                        <div class="glass-card p-6 rounded-2xl">
-                            <span class="text-2xl font-mono font-bold text-brand-gold block mb-3">02</span>
-                            <h3 class="text-lg font-serif font-bold text-white mb-2">No technology leader in the seat</h3>
-                            <p class="text-xs text-slate-300 leading-relaxed">
-                                A CTO or CIO gap is being covered informally by a stretched executive team without deep technical governance experience.
-                            </p>
-                        </div>
-
-                        <div class="glass-card p-6 rounded-2xl">
-                            <span class="text-2xl font-mono font-bold text-brand-gold block mb-3">03</span>
-                            <h3 class="text-lg font-serif font-bold text-white mb-2">An audit or regulatory finding</h3>
-                            <p class="text-xs text-slate-300 leading-relaxed">
-                                Controls, evidence and ownership need to be put right before the next scheduled regulatory review.
-                            </p>
-                        </div>
-
-                        <div class="glass-card p-6 rounded-2xl">
-                            <span class="text-2xl font-mono font-bold text-brand-gold block mb-3">04</span>
-                            <h3 class="text-lg font-serif font-bold text-white mb-2">Technology spend is unclear</h3>
-                            <p class="text-xs text-slate-300 leading-relaxed">
-                                Vendor, license and project costs are growing rapidly without a defensible return on investment.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sectors We Work In Grid -->
-                <div class="mb-8">
-                    <h2 class="text-2xl font-serif font-bold text-white mb-8 border-b border-slate-800 pb-4">
-                        Sectors we work in
-                    </h2>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-                        <div class="glass-panel p-6 rounded-xl text-center flex flex-col items-center justify-center hover:border-brand-gold/50 transition-colors">
-                            <i class="fa-solid fa-building-columns text-2xl text-brand-gold mb-3"></i>
-                            <span class="text-xs font-semibold text-white">Financial services</span>
-                        </div>
-                        <div class="glass-panel p-6 rounded-xl text-center flex flex-col items-center justify-center hover:border-brand-gold/50 transition-colors">
-                            <i class="fa-solid fa-heart-pulse text-2xl text-brand-gold mb-3"></i>
-                            <span class="text-xs font-semibold text-white">Healthcare & life sciences</span>
-                        </div>
-                        <div class="glass-panel p-6 rounded-xl text-center flex flex-col items-center justify-center hover:border-brand-gold/50 transition-colors">
-                            <i class="fa-solid fa-landmark text-2xl text-brand-gold mb-3"></i>
-                            <span class="text-xs font-semibold text-white">Government & public sector</span>
-                        </div>
-                        <div class="glass-panel p-6 rounded-xl text-center flex flex-col items-center justify-center hover:border-brand-gold/50 transition-colors">
-                            <i class="fa-solid fa-truck-fast text-2xl text-brand-gold mb-3"></i>
-                            <span class="text-xs font-semibold text-white">Logistics & infrastructure</span>
-                        </div>
-                        <div class="glass-panel p-6 rounded-xl text-center flex flex-col items-center justify-center hover:border-brand-gold/50 transition-colors">
-                            <i class="fa-solid fa-user-tie text-2xl text-brand-gold mb-3"></i>
-                            <span class="text-xs font-semibold text-white">Professional services</span>
-                        </div>
-                        <div class="glass-panel p-6 rounded-xl text-center flex flex-col items-center justify-center hover:border-brand-gold/50 transition-colors">
-                            <i class="fa-solid fa-bolt-lightning text-2xl text-brand-gold mb-3"></i>
-                            <span class="text-xs font-semibold text-white">Industrial & energy</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-    <!-- TAB 6: CONSULTATION FORM -->
-        <section id="tab-consultation" class="tab-content hidden transition-opacity duration-300 py-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- 2. COMPREHENSIVE CORPORATE SOLUTIONS (4 FEATURED CARDS) -->
+            <section id="solutions" class="py-16 sm:py-20 bg-[#f7f9f9]">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     
-                    <!-- Form Side Intro -->
-                    <div class="lg:col-span-5 space-y-8">
-                        <div>
-                            <span class="text-brand-gold text-xs font-bold uppercase tracking-widest block mb-2">Direct Engagement</span>
-                            <h1 class="text-3xl sm:text-4xl font-serif font-bold text-white mb-4">Request a consultation.</h1>
-                            <p class="text-slate-300 leading-relaxed">
-                                Tell us the mandate in your own words. We review every request ourselves and come back with a written view of the approach, the timeline and the fee.
-                            </p>
-                        </div>
-
-                        <!-- What happens next box -->
-                        <div class="glass-panel p-6 rounded-2xl space-y-4">
-                            <h3 class="text-sm font-serif font-bold text-white uppercase tracking-wider text-brand-gold">What happens next</h3>
-                            
-                            <div class="space-y-4 text-xs">
-                                <div class="flex items-start gap-3">
-                                    <span class="w-6 h-6 rounded-full bg-brand-gold/10 border border-brand-gold/40 text-brand-gold font-bold flex items-center justify-center shrink-0">01</span>
-                                    <div>
-                                        <strong class="text-white block">Request a consultation</strong>
-                                        <span class="text-slate-400">Tell us the mandate. You receive a reference number immediately.</span>
-                                    </div>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <span class="w-6 h-6 rounded-full bg-brand-gold/10 border border-brand-gold/40 text-brand-gold font-bold flex items-center justify-center shrink-0">02</span>
-                                    <div>
-                                        <strong class="text-white block">Scope and proposal</strong>
-                                        <span class="text-slate-400">We confirm the approach, timeline and fee in writing within one business day.</span>
-                                    </div>
-                                </div>
-                                <div class="flex items-start gap-3">
-                                    <span class="w-6 h-6 rounded-full bg-brand-gold/10 border border-brand-gold/40 text-brand-gold font-bold flex items-center justify-center shrink-0">03</span>
-                                    <div>
-                                        <strong class="text-white block">Invoice and payment</strong>
-                                        <span class="text-slate-400">Your invoice is issued as per milestone.</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <p class="text-xs text-brand-gold/90 pt-2 border-t border-slate-800 italic">
-                                <i class="fa-solid fa-clock mr-1"></i> Every request is reviewed and answered within five business day.
-                            </p>
-                        </div>
-
-                        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300 flex items-center justify-between">
-                            <span>Direct Partner Email:</span>
-                            <a href="mailto:elevateitconsultancy@gmail.com" class="text-brand-gold font-mono font-bold hover:underline">elevateitconsultancy@gmail.com</a>
-                        </div>
+                    <div class="max-w-3xl mb-12 space-y-3">
+                        <h2 class="serif-title text-3xl sm:text-4xl text-slateTheme-900 font-normal">
+                            Comprehensive corporate solutions
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                            Discover specialized consultancy designed to streamline operations, maintain compliance, and accelerate sustainable commercial growth across the Emirates and beyond.
+                        </p>
                     </div>
 
-<!-- Consultation Form connected to Formspree AJAX -->
-<div class="lg:col-span-7">
-    <div class="glass-panel p-8 rounded-3xl border border-brand-gold/30 shadow-2xl relative">
-        <!-- Success Message Box -->
-        <div data-fs-success class="hidden p-6 mb-6 rounded-xl bg-emerald-950/30 border border-emerald-500/40 text-center space-y-3">
-            <i class="fa-solid fa-circle-check text-3xl text-emerald-600"></i>
-            <h4 class="text-lg font-serif font-bold text-white">Mandate Request Received</h4>
-            <p class="text-xs text-slate-300">Your consultation ticket has been registered in our governance queue. We will review and respond within five business days.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        
+                        <!-- Card 1: IT -->
+                        <div class="bg-white rounded-none border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between">
+                            <div>
+                                <div class="h-48 overflow-hidden bg-gray-100">
+                                    <img src="assets/service-it.jpg" 
+                                         onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=Information+Technology'"
+                                         alt="Information Technology Infrastructure" 
+                                         class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-5 space-y-3">
+                                    <h3 class="serif-title text-xl text-slateTheme-900 font-normal">Information technology</h3>
+                                    <p class="text-xs text-gray-600 leading-relaxed">
+                                        Robust IT infrastructure, digital transformation, and technical support built for modern operations.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="p-5 pt-0">
+                                <button onclick="showItServicesPage()" class="btn-slate text-xs px-4 py-2 rounded-sm font-medium inline-flex items-center gap-1.5">
+                                    <span>Discover IT</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Bookkeeping & tax -->
+                        <div class="bg-white rounded-none border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between">
+                            <div>
+                                <div class="h-48 overflow-hidden bg-gray-100">
+                                    <img src="assets/service-tax.jpg" 
+                                         onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=Bookkeeping+and+Tax'"
+                                         alt="Bookkeeping and UAE Tax Compliance" 
+                                         class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-5 space-y-3">
+                                    <h3 class="serif-title text-xl text-slateTheme-900 font-normal">Bookkeeping & tax</h3>
+                                    <p class="text-xs text-gray-600 leading-relaxed">
+                                        Meticulous accounting, corporate tax, and VAT compliance tailored to UAE statutory requirements.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="p-5 pt-0">
+                                <button onclick="showTaxServicesPage()" class="btn-slate text-xs px-4 py-2 rounded-sm font-medium inline-flex items-center gap-1.5">
+                                    <span>View tax services</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Digital marketing -->
+                        <div class="bg-white rounded-none border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between">
+                            <div>
+                                <div class="h-48 overflow-hidden bg-gray-100">
+                                    <img src="assets/service-marketing.jpg" 
+                                         onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=Digital+Marketing'"
+                                         alt="Digital Marketing Strategy" 
+                                         class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-5 space-y-3">
+                                    <h3 class="serif-title text-xl text-slateTheme-900 font-normal">Digital marketing</h3>
+                                    <p class="text-xs text-gray-600 leading-relaxed">
+                                        Targeted campaigns, brand elevation, and creative strategies that attract and engage your target audience.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="p-5 pt-0">
+                                <button onclick="showMarketingServicesPage()" class="btn-slate text-xs px-4 py-2 rounded-sm font-medium inline-flex items-center gap-1.5">
+                                    <span>Explore marketing</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Events & training -->
+                        <div class="bg-white rounded-none border border-gray-200 overflow-hidden shadow-sm flex flex-col justify-between">
+                            <div>
+                                <div class="h-48 overflow-hidden bg-gray-100">
+                                    <img src="assets/service-events.jpg" 
+                                         onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=Events+and+Training'"
+                                         alt="Event Management and Corporate Training" 
+                                         class="w-full h-full object-cover">
+                                </div>
+                                <div class="p-5 space-y-3">
+                                    <h3 class="serif-title text-xl text-slateTheme-900 font-normal">Events & training</h3>
+                                    <p class="text-xs text-gray-600 leading-relaxed">
+                                        Flawless event management paired with professional corporate training programs for your workforce.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="p-5 pt-0">
+                                <button onclick="showEventTrainingServicesPage()" class="btn-slate text-xs px-4 py-2 rounded-sm font-medium inline-flex items-center gap-1.5">
+                                    <span>Event & training</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. MULTI-DISCIPLINARY PARTNER SECTION -->
+            <section id="partner" class="py-16 sm:py-20 bg-[#eef2f2] border-t border-b border-gray-200">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                        <div class="lg:col-span-6">
+                            <div class="shadow-lg border border-gray-300 overflow-hidden">
+                                <img src="assets/about-atrium.jpg" 
+                                     onerror="this.src='https://placehold.co/800x800/344341/FFFFFF?text=Modern+UAE+Architecture'"
+                                     alt="Modern Commercial Atrium Architecture" 
+                                     class="w-full h-[380px] lg:h-[420px] object-cover">
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-6 space-y-6">
+                            <h2 class="serif-title text-3xl sm:text-4xl text-slateTheme-900 font-normal leading-tight">
+                                Your trusted multi-disciplinary partner
+                            </h2>
+                            <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                                Based in Ajman, Elevate Global Consultancy & Services brings together a team of seasoned specialists across key commercial sectors. By integrating technology, finance, branding, and talent development under one roof, we help organizations navigate complex business environments with total confidence.
+                            </p>
+
+                            <div class="flex flex-wrap gap-4 pt-2">
+                                <button onclick="scrollToSection('contact')" class="btn-slate px-5 py-2.5 rounded-sm text-xs font-medium">
+                                    Explore about us
+                                </button>
+                                <button onclick="scrollToSection('solutions')" class="btn-slate-outline px-5 py-2.5 rounded-sm text-xs font-medium">
+                                    View our services
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. COLLABORATIVE JOURNEY & TEAM SHOWCASE -->
+            <section class="py-16 sm:py-20 bg-[#e5eae9]">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+                        <h2 class="serif-title text-3xl sm:text-4xl text-slateTheme-900 font-normal">
+                            A collaborative journey to measurable success
+                        </h2>
+                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                            We believe in delivering end-to-end solutions that drive genuine results. Whether restructuring your financial ledger, upgrading IT networks, or orchestrating your flagship corporate event, our focus remains on long-term client prosperity.
+                        </p>
+                    </div>
+
+                    <div class="max-w-4xl mx-auto mb-12 shadow-md overflow-hidden bg-white">
+                        <img src="assets/team-collaborate.jpg" 
+                             onerror="this.src='https://placehold.co/1200x600/40514e/FFFFFF?text=Collaborative+Consulting+Team'"
+                             alt="Elevate Team Collaborating Around Board" 
+                             class="w-full h-72 sm:h-96 object-cover">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. CTA BANNER SECTION -->
+            <section class="py-16 bg-[#3e4c49] text-white">
+                <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8 space-y-6">
+                    <h2 class="serif-title text-3xl sm:text-4xl lg:text-5xl font-normal leading-tight">
+                        Ready to elevate your business operations?
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-200 leading-relaxed font-light">
+                        Connect with our consultants today to discover how our multi-faceted practice can support your upcoming projects, strengthen your compliance, and power your growth.
+                    </p>
+                    <div class="pt-2">
+                        <button onclick="scrollToSection('solutions')" class="bg-white text-slateTheme-900 hover:bg-gray-100 px-6 py-3 rounded-sm text-xs font-semibold transition-all">
+                            View our services
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. CONTACT FORM & OFFICE DETAILS SECTION -->
+            <section id="contact" class="py-16 sm:py-20 bg-[#f7f9f9]">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    
+                    <h2 class="serif-title text-3xl sm:text-4xl text-slateTheme-900 font-normal mb-8">
+                        Get in touch
+                    </h2>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                        
+                        <!-- Left Column: Form -->
+                        <div class="lg:col-span-6 space-y-5">
+                            <div data-fs-success class="hidden p-4 rounded-sm bg-emerald-50 border border-emerald-300 text-emerald-800 text-xs">
+                                Thank you! Your message has been sent to our advisory team. We will respond shortly.
+                            </div>
+
+                            <form id="contactForm" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 mb-1">Name *</label>
+                                    <input type="text" name="name" id="contactName" data-fs-field required class="w-full bg-white border border-gray-300 focus:border-slateTheme-700 rounded-none px-3 py-2.5 text-xs text-gray-800 outline-none">
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-gray-700 mb-1">Email address *</label>
+                                        <input type="email" name="email" id="contactEmail" data-fs-field required class="w-full bg-white border border-gray-300 focus:border-slateTheme-700 rounded-none px-3 py-2.5 text-xs text-gray-800 outline-none">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-gray-700 mb-1">Contact number <span class="text-gray-400 font-normal">(Optional)</span></label>
+                                        <input type="tel" name="phone" id="contactPhone" data-fs-field class="w-full bg-white border border-gray-300 focus:border-slateTheme-700 rounded-none px-3 py-2.5 text-xs text-gray-800 outline-none" placeholder="+971 XX XXX XXXX">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 mb-1">Designation <span class="text-gray-400 font-normal">(Optional)</span></label>
+                                    <input type="text" name="designation" id="contactDesignation" data-fs-field class="w-full bg-white border border-gray-300 focus:border-slateTheme-700 rounded-none px-3 py-2.5 text-xs text-gray-800 outline-none" placeholder="e.g. Managing Director, IT Manager">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-700 mb-1">Message *</label>
+                                    <textarea name="message" id="contactMessage" data-fs-field rows="4" required class="w-full bg-white border border-gray-300 focus:border-slateTheme-700 rounded-none px-3 py-2.5 text-xs text-gray-800 outline-none resize-none"></textarea>
+                                </div>
+
+                                <span data-fs-error class="text-xs text-rose-500 block"></span>
+
+                                <button type="submit" data-fs-submit-btn class="btn-slate px-6 py-3 rounded-none text-xs font-semibold">
+                                    Submit form
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Right Column: Map & Details -->
+                        <div class="lg:col-span-6 space-y-6">
+                            <div class="border border-gray-300 overflow-hidden shadow-sm h-64 bg-gray-200">
+                                <iframe 
+                                    title="Elevate Global Consultancy Location - Ajman, UAE"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115408.24588729571!2d55.4518063!3d25.4052165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5763d27457bd%3A0x6b30689b6f65e237!2sAjman%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1710000000000!5m2!1sen!2s" 
+                                    class="w-full h-full border-0 filter grayscale contrast-125 opacity-90 hover:grayscale-0 transition-all duration-300" 
+                                    allowfullscreen="" 
+                                    loading="lazy">
+                                </iframe>
+                            </div>
+
+                            <div class="space-y-2">
+                                <h3 class="serif-title text-2xl text-slateTheme-900 font-normal">Our office</h3>
+                                <div class="text-xs text-gray-600 leading-relaxed space-y-1">
+                                    <p class="font-semibold text-slateTheme-900">Elevate Global Consultancy & Services</p>
+                                    <p>Ajman, United Arab Emirates</p>
+                                    <p>Email: <a href="mailto:elevateglobalconsultservices@gmail.com" class="text-slateTheme-700 hover:underline">elevateglobalconsultservices@gmail.com</a></p>
+                                    <p>Phone: <a href="tel:+971562424001" class="text-slateTheme-700 hover:underline">+971 56 242 4001</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
         </div>
 
-        <form id="consultationForm" action="https://formspree.io/f/xdeazbqv" method="POST" class="space-y-5">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Full Name *</label>
-                    <input type="text" name="fullName" id="consultName" data-fs-field required placeholder="e.g. Marcus Vance" class="w-full bg-slate-900/90 border border-slate-700 focus:border-brand-gold rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none transition-colors">
-                    <span data-fs-error="fullName" class="text-xs text-rose-400 mt-1 block"></span>
+        <!-- SEPARATE DISCOVER IT SERVICES VIEW -->
+        <div id="itServicesView" class="hidden bg-[#f7f9f9] min-h-screen py-12 px-4 sm:px-6 lg:px-8 text-gray-800">
+            <div class="max-w-7xl mx-auto animate-fade-in-up">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 pb-6 border-b border-gray-300">
+                    <div>
+                        <button onclick="showMainPage()" class="inline-flex items-center text-xs font-semibold text-slateTheme-700 hover:text-slateTheme-900 mb-3 transition-colors cursor-pointer group">
+                            <i class="fa-solid fa-arrow-left mr-2 transition-transform group-hover:-translate-x-1"></i> Back to Main Site
+                        </button>
+                        <h1 class="text-3xl sm:text-4xl serif-title font-normal text-slateTheme-900 tracking-wide">Information Technology Mandates & Packages</h1>
+                        <p class="text-gray-600 text-sm mt-2 max-w-2xl">Specialized technology consultancy, infrastructure deployments, and governed execution bundles designed to build, secure, and scale modern business operations.</p>
+                    </div>
+                    <button onclick="showMainPage(); scrollToSection('contact');" class="mt-4 md:mt-0 btn-slate px-6 py-3 rounded-sm font-semibold text-xs uppercase tracking-wider transition-all shadow-md hover:scale-105">
+                        Inquire Custom IT Mandate
+                    </button>
                 </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Designation *</label>
-                    <input type="text" name="designation" id="consultDesignation" data-fs-field required placeholder="e.g. Chief Risk Officer / Operations Director" class="w-full bg-slate-900/90 border border-slate-700 focus:border-brand-gold rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none transition-colors">
-                    <span data-fs-error="designation" class="text-xs text-rose-400 mt-1 block"></span>
-                </div>
-            </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Work Email *</label>
-                    <input type="email" name="email" id="consultEmail" data-fs-field required placeholder="m.vance@company.com" class="w-full bg-slate-900/90 border border-slate-700 focus:border-brand-gold rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none transition-colors">
-                    <span data-fs-error="email" class="text-xs text-rose-400 mt-1 block"></span>
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Phone Number *</label>
-                    <input type="tel" name="phone" id="consultPhone" data-fs-field required placeholder="+971 50 123 4567" class="w-full bg-slate-900/90 border border-slate-700 focus:border-brand-gold rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none transition-colors">
-                    <span data-fs-error="phone" class="text-xs text-rose-400 mt-1 block"></span>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Organization Name *</label>
-                    <input type="text" name="organization" id="consultOrg" data-fs-field required placeholder="e.g. Apex Financial Holdings" class="w-full bg-slate-900/90 border border-slate-700 focus:border-brand-gold rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none transition-colors">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Organization Size *</label>
-                    <select name="organizationSize" id="consultOrgSize" data-fs-field required class="w-full bg-slate-900/90 border border-slate-700 focus:border-brand-gold rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none transition-colors">
-                        <option value="" disabled selected>Select Organization Size</option>
-                        <option value="50-199 employees">50 - 199 employees</option>
-                        <option value="200-500 employees">200 - 500 employees</option>
-                        <option value="500-1,000 employees">500 - 1,000 employees</option>
-                        <option value="1,000-5,000+ employees">1,000 - 5,000+ employees</option>
-                    </select>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white border border-gray-200 shadow-sm rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.05s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/it-pm.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=IT+Project+Management'" alt="IT Project Management" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-slateTheme-900 text-[#d4af37] text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider rounded-sm shadow-sm">01</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-slateTheme-700 font-bold block mb-1">Execution & Delivery</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">IT Project Management & Service Delivery</h2>
+                                <p class="text-xs text-amber-600 font-medium mb-4 pb-4 border-b border-gray-100">On-Time, In-Scope, and Budget-Aligned Technology Execution</p>
+                                <p class="text-xs text-gray-600 leading-relaxed mb-6 font-light">Turn complex technology initiatives into smooth, predictable outcomes.</p>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestMandate('IT Project Management & Service Delivery')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-all group">
+                                    <span>Request This Mandate</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Service You Need *</label>
-                <select name="serviceNeeded" id="consultService" data-fs-field required class="w-full bg-slate-900/90 border border-slate-700 focus:border-brand-gold rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none transition-colors">
-                    <option value="" disabled selected>Select Primary Service</option>
-                    <option value="IT Project Management & Service Delivery">01: IT Project Management & Service Delivery</option>
-                    <option value="IT Strategy & Technology Advisory">02: IT Strategy & Technology Advisory</option>
-                    <option value="Cloud Infrastructure Management">03: Cloud Infrastructure Management</option>
-                    <option value="Process Automation & Custom Development">04: Process Automation & Custom Development</option>
-                    <option value="Managed Service & Support (MSP)">05: Managed Service & Support (MSP)</option>
-                    <option value="Cyber Security & Compliance">06: Cyber Security & Compliance</option>
-                    <option value="IP Camera">07: IP Camera</option>
-                    <option value="Endpoint Management & Modern Deployment">08: Endpoint Management & Modern Deployment</option>
-                    <option value="Microsoft Office 365 Solutions">09: Microsoft Office 365 Solutions</option>
-                </select>
-            </div>
-
-            <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Primary Challenges *</label>
-                <input type="text" name="primaryChallenges" id="consultChallenges" data-fs-field required placeholder="e.g. Schedule slippage, lack of audit documentation, vendor accountability" class="w-full bg-slate-900/90 border border-slate-700 focus:border-brand-gold rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none transition-colors">
-            </div>
-
-            <div>
-                <label class="block text-xs font-semibold text-slate-300 mb-1.5">What are you trying to fix? *</label>
-                <textarea name="problemToFix" id="consultFix" data-fs-field rows="4" required placeholder="Describe the current mandate or project bottleneck in a few lines..." class="w-full bg-slate-900/90 border border-slate-700 focus:border-brand-gold rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none transition-colors resize-none"></textarea>
-            </div>
-
-            <!-- Form-level Error Container -->
-            <span data-fs-error class="text-xs text-rose-400 block"></span>
-
-            <button type="submit" data-fs-submit-btn class="w-full bg-gradient-to-r from-brand-gold via-amber-500 to-yellow-600 hover:opacity-95 text-slate-950 font-bold py-3.5 rounded-lg shadow-xl transition-all flex items-center justify-center gap-2">
-                <i class="fa-solid fa-paper-plane"></i>
-                <span>Submit Consultation Mandate</span>
-            </button>
-        </form>
-   </div>
-</div>
-       
     </main>
 
-
     <!-- Footer -->
-    <footer class="bg-brand-900 border-t border-white/10 py-12 text-slate-400 text-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
-                
-                <div class="md:col-span-6 space-y-3">
-                    <div class="flex items-center cursor-pointer" data-tab="home">
-                        <div class="w-8 h-8 rounded bg-gradient-to-br from-brand-gold to-amber-600 flex items-center justify-center font-serif text-slate-950 font-bold text-sm mr-2">
-                            E
-                        </div>
-                        <span class="font-serif text-lg font-bold text-white tracking-wider">ELEVATE</span>
-                    </div>
-                    <p class="text-slate-400 max-w-sm leading-relaxed">
-                        Elevate Global Consultancy & Services is a senior advisory practice putting governance, delivery discipline and technology leadership around key enterprise programmes.
-                    </p>
-                </div>
-
-                <div class="md:col-span-3 space-y-2">
-                    <h4 class="text-white font-serif font-semibold text-sm mb-3">Quick Navigation</h4>
-                    <button data-tab="home" class="block hover:text-brand-gold text-left">Home</button>
-                    <button data-tab="mission" class="block hover:text-brand-gold text-left">Our Mission</button>
-                    <button data-tab="services" class="block hover:text-brand-gold text-left">Services Offered</button>
-                    <button data-tab="approach" class="block hover:text-brand-gold text-left">Approach</button>
-                    <button data-tab="whoweserve" class="block hover:text-brand-gold text-left">Who We Serve</button>
-                </div>
-
-                <div class="md:col-span-3 space-y-2">
-                    <h4 class="text-white font-serif font-semibold text-sm mb-3">Direct Contact</h4>
-                    <p class="text-slate-300"><i class="fa-solid fa-envelope text-brand-gold mr-2"></i> elevateitconsultancy@gmail.com</p>
-                    <p class="text-slate-300"><i class="fa-solid fa-building text-brand-gold mr-2"></i> FZ-LLC Registered Entity</p>
-                    <p class="text-slate-300"><i class="fa-solid fa-globe text-brand-gold mr-2"></i> United Arab Emirates</p>
-                </div>
+    <footer class="bg-slateTheme-900 border-t border-gray-800 text-gray-400 py-10 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                <p>&copy; 2026 Elevate Global Consultancy & Services. Ajman, United Arab Emirates. All rights reserved.</p>
             </div>
-
-            <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-slate-500 gap-4">
-                <p>&copy; 2026 Elevate Global Consultancy & Services. All rights reserved.</p>
+            <div class="flex gap-6">
+                <button onclick="showMainPage(); scrollToSection('hero')" class="hover:text-white transition-colors">Home</button>
+                <button onclick="showMainPage(); scrollToSection('solutions')" class="hover:text-white transition-colors">Services</button>
+                <button onclick="showMainPage(); scrollToSection('partner')" class="hover:text-white transition-colors">About Us</button>
+                <button onclick="showMainPage(); scrollToSection('contact')" class="hover:text-white transition-colors">Contact</button>
             </div>
         </div>
     </footer>
 
-    <!-- FLOATING CHATBOT WIDGET -->
-    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
-        <div id="chatbotWindow" class="hidden glass-panel w-80 sm:w-96 rounded-2xl border border-brand-gold/40 shadow-2xl flex flex-col overflow-hidden bg-slate-950/90 backdrop-blur-xl">
-            <div class="bg-brand-900 p-4 border-b border-brand-gold/20 flex justify-between items-center">
-                <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-full bg-brand-gold/20 border border-brand-gold text-brand-gold flex items-center justify-center font-bold text-xs">
-                        <i class="fa-solid fa-robot"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-xs font-serif font-bold text-white">Elevate Advisory Assistant</h4>
-                        <span class="text-[10px] text-emerald-400 flex items-center gap-1">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Active
-                        </span>
-                    </div>
+    <!-- WhatsApp & Chatbot Floating Widgets -->
+    <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
+        <div id="chatbotWindow" class="hidden bg-white w-80 sm:w-96 border border-gray-300 shadow-2xl rounded-none overflow-hidden flex flex-col">
+            <div class="bg-slateTheme-900 text-white p-3 flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-user-tie text-xs text-gray-300"></i>
+                    <span class="text-xs font-semibold">Elevate Advisory Assistant</span>
                 </div>
-                <button data-action="toggle-chatbot" class="text-slate-400 hover:text-white p-1">
-                    <i class="fa-solid fa-xmark text-sm"></i>
+                <button onclick="toggleChatbot()" class="text-gray-300 hover:text-white text-xs">
+                    <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
-
-            <div id="chatMessages" class="p-4 h-72 overflow-y-auto space-y-3 text-xs text-slate-300">
-                <div class="bg-brand-800/60 p-3 rounded-xl border border-slate-700/60 max-w-[85%]">
-                    Welcome to <strong>Elevate Global Consultancy & Services</strong>. How can we assist with your technology governance or delivery mandate today?
+            <div id="chatMessages" class="p-4 h-60 overflow-y-auto space-y-3 text-xs bg-gray-50">
+                <div class="bg-white p-3 border border-gray-200 text-gray-700 max-w-[85%] shadow-xs">
+                    Hello! Welcome to <strong>Elevate Global Consultancy & Services</strong> (Ajman, UAE). How may we assist with your IT, tax, marketing, or training requirements today?
                 </div>
             </div>
-
-            <div class="p-3 bg-slate-900 border-t border-slate-800 flex gap-2">
-                <input type="text" id="chatInput" placeholder="Type your query or project scope..." class="flex-grow bg-slate-950 border border-slate-700 focus:border-brand-gold rounded-lg px-3 py-2 text-xs text-white focus:outline-none">
-                <button data-action="send-chat-message" class="bg-brand-gold hover:bg-amber-500 text-slate-950 px-3.5 py-2 rounded-lg font-bold transition-colors">
-                    <i class="fa-solid fa-paper-plane text-xs"></i>
-                </button>
+            <div class="p-3 bg-white border-t border-gray-200 flex gap-2">
+                <input type="text" id="chatInput" placeholder="Type your query..." class="flex-grow bg-gray-50 border border-gray-300 px-3 py-1.5 text-xs outline-none" onkeypress="if(event.key==='Enter') sendChatMessage()">
+                <button onclick="sendChatMessage()" class="btn-slate px-3 py-1.5 text-xs font-semibold">Send</button>
             </div>
         </div>
 
         <div class="flex items-center gap-3">
-            <a href="https://wa.me/971562424001?text=Hello%20Elevate%20IT%20Consultancy,%20I%20would%20like%20to%20discuss%20an%20IT%20governance%20mandate." target="_blank" title="Chat on WhatsApp" class="w-10 h-10 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-2xl flex items-center justify-center text-2xl transition-all transform hover:scale-105 border border-emerald-400/40">
+            <a href="https://wa.me/971562424001?text=Hello%20Elevate%20Consultancy,%20I%20would%20like%20to%20discuss%20a%20service%20mandate." target="_blank" rel="noopener noreferrer" title="WhatsApp Advisory" class="w-11 h-11 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg flex items-center justify-center text-xl transition-all">
                 <i class="fa-brands fa-whatsapp"></i>
             </a>
-
-            <button data-action="toggle-chatbot" class="w-10 h-10 rounded-full bg-gradient-to-r from-brand-gold to-amber-600 hover:from-amber-500 hover:to-yellow-500 text-slate-950 shadow-2xl flex items-center justify-center text-xl transition-all transform hover:scale-105 border border-yellow-200/50">
+            <button onclick="toggleChatbot()" class="w-11 h-11 rounded-full bg-slateTheme-700 hover:bg-slateTheme-900 text-white shadow-lg flex items-center justify-center text-lg transition-all">
                 <i class="fa-solid fa-comments"></i>
             </button>
         </div>
     </div>
 
-    <!-- External Script Bundle -->
-    <script src="js/app.js"></script>
-
-    <!-- Formspree AJAX SDK Initialization -->
-    <script>
-        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-        formspree('initForm', { formElement: '#consultationForm', formId: 'xdeazbqv' });
-    </script>
+    <!-- Formspree Ajax Library -->
     <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
