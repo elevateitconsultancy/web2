@@ -6,7 +6,7 @@
     <title>Elevate Global Consultancy & Services</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- EXTERNAL JS SCRIPT LINK (Fixes all broken links & buttons) -->
+    <!-- External JS SCRIPT LINK (Fixes all navigation & interactive functions) -->
     <script src="js/script.js"></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -369,6 +369,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- IT Card 1 -->
                     <div class="bg-white border border-gray-200 shadow-sm rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.05s;">
                         <div class="h-44 overflow-hidden bg-gray-100 relative">
                             <img src="assets/it-pm.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=IT+Project+Management'" alt="IT Project Management" class="w-full h-full object-cover">
@@ -379,11 +380,616 @@
                                 <span class="text-[10px] uppercase font-mono tracking-wider text-slateTheme-700 font-bold block mb-1">Execution & Delivery</span>
                                 <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">IT Project Management & Service Delivery</h2>
                                 <p class="text-xs text-amber-600 font-medium mb-4 pb-4 border-b border-gray-100">On-Time, In-Scope, and Budget-Aligned Technology Execution</p>
-                                <p class="text-xs text-gray-600 leading-relaxed mb-6 font-light">Turn complex technology initiatives into smooth, predictable outcomes.</p>
+                                <p class="text-xs text-gray-600 leading-relaxed mb-6 font-light">Turn complex technology initiatives into smooth, predictable outcomes. From infrastructure upgrades and cloud rollouts to enterprise tool deployments, we provide end-to-end project management.</p>
                             </div>
                             <div class="pt-4 border-t border-gray-100">
                                 <button onclick="requestMandate('IT Project Management & Service Delivery')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-all group">
                                     <span>Request This Mandate</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- IT Card 2 -->
+                    <div class="bg-white border border-gray-200 shadow-sm rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/it-strategy.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=IT+Strategy'" alt="IT Strategy" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-slateTheme-900 text-[#d4af37] text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider rounded-sm shadow-sm">02</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-slateTheme-700 font-bold block mb-1">Strategy & Roadmap</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">IT Strategy & Technology Advisory</h2>
+                                <p class="text-xs text-amber-600 font-medium mb-4 pb-4 border-b border-gray-100">Align Your Technology with Strategic Business Growth</p>
+                                <p class="text-xs text-gray-600 leading-relaxed mb-6 font-light">We bridge the gap between business objectives and technology execution. By evaluating your existing infrastructure, optimizing IT budgets, and designing clear technical roadmaps.</p>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestMandate('IT Strategy & Technology Advisory')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-all group">
+                                    <span>Request This Mandate</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- IT Card 3 -->
+                    <div class="bg-white border border-gray-200 shadow-sm rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.15s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/it-cloud.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=Cloud+Infrastructure'" alt="Cloud Infrastructure" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-slateTheme-900 text-[#d4af37] text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider rounded-sm shadow-sm">03</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-slateTheme-700 font-bold block mb-1">Cloud Architecture</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">Cloud Infrastructure Management</h2>
+                                <p class="text-xs text-amber-600 font-medium mb-4 pb-4 border-b border-gray-100">Scalable, Secure, and High-Performance Cloud Solutions</p>
+                                <p class="text-xs text-gray-600 leading-relaxed mb-6 font-light">Modernize your workplace with seamless cloud migrations and enterprise-grade infrastructure. We design, deploy, and optimize hybrid, multi-cloud, and on-premises environments.</p>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestMandate('Cloud Infrastructure Management')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-all group">
+                                    <span>Request This Mandate</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- IT Card 4 -->
+                    <div class="bg-white border border-gray-200 shadow-sm rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/it-automation.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=Automation'" alt="Automation" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-slateTheme-900 text-[#d4af37] text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider rounded-sm shadow-sm">04</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-slateTheme-700 font-bold block mb-1">Automation & Scripts</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">Process Automation & Custom Development</h2>
+                                <p class="text-xs text-amber-600 font-medium mb-4 pb-4 border-b border-gray-100">Streamline Operations and Eliminate Manual Workflows</p>
+                                <p class="text-xs text-gray-600 leading-relaxed mb-6 font-light">Transform repetitive manual tasks into efficient, automated workflows. We build tailored internal tools, custom scripts, and data reporting solutions that save operational hours.</p>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestMandate('Process Automation & Custom Development')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-all group">
+                                    <span>Request This Mandate</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- IT Card 5 -->
+                    <div class="bg-white border-2 border-slateTheme-700 shadow-md rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.25s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/it-msp.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=MSP+Support'" alt="MSP Support" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-amber-600 text-white text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider rounded-sm shadow-xs">POPULAR</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-slateTheme-700 font-bold block mb-1">24/7 Support</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">Managed Service & Support (MSP)</h2>
+                                <p class="text-xs text-amber-600 font-medium mb-4 pb-4 border-b border-gray-100">Reliable, 24/7 IT Operations and Continuous System Maintenance</p>
+                                <p class="text-xs text-gray-600 leading-relaxed mb-6 font-light">Focus on growing your business while we handle your technology. Our proactive managed IT services offer round-the-clock system monitoring, quick incident response, and ongoing support.</p>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestMandate('Managed Service & Support (MSP)')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-all group">
+                                    <span>Request This Mandate</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- IT Card 6 -->
+                    <div class="bg-white border border-gray-200 shadow-sm rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/it-security.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=Cybersecurity'" alt="Cybersecurity" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-slateTheme-900 text-[#d4af37] text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider rounded-sm shadow-sm">06</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-slateTheme-700 font-bold block mb-1">Security & Defense</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">Cyber Security & Compliance</h2>
+                                <p class="text-xs text-amber-600 font-medium mb-4 pb-4 border-b border-gray-100">Proactive Defense and Regulatory Compliance for Peace of Mind</p>
+                                <p class="text-xs text-gray-600 leading-relaxed mb-6 font-light">Protect your business-critical data against evolving cyber threats. From comprehensive risk assessments to continuous compliance management, we implement multi-layered security controls.</p>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestMandate('Cyber Security & Compliance')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-all group">
+                                    <span>Request This Mandate</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- IT Card 7 -->
+                    <div class="bg-white border border-gray-200 shadow-sm rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.35s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/it-endpoint.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=Endpoint+Management'" alt="Endpoint Management" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-slateTheme-900 text-[#d4af37] text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider rounded-sm shadow-sm">07</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-slateTheme-700 font-bold block mb-1">Endpoint Security</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">Endpoint Management & Modern Deployment</h2>
+                                <p class="text-xs text-amber-600 font-medium mb-4 pb-4 border-b border-gray-100">Zero-Touch Provisioning with Microsoft Autopilot & Intune</p>
+                                <p class="text-xs text-gray-600 leading-relaxed mb-6 font-light">Streamline your hardware lifecycle with automated device enrollment, zero-touch provisioning, and real-time compliance enforcement for Windows, iOS, and Android.</p>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestMandate('Endpoint Management & Modern Deployment')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-all group">
+                                    <span>Request This Mandate</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- IT Card 8 -->
+                    <div class="bg-white border border-gray-200 shadow-sm rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/it-o365.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=Office+365'" alt="Office 365" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-slateTheme-900 text-[#d4af37] text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider rounded-sm shadow-sm">08</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-slateTheme-700 font-bold block mb-1">Cloud Productivity</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">Microsoft Office 365 Solutions</h2>
+                                <p class="text-xs text-amber-600 font-medium mb-4 pb-4 border-b border-gray-100">Empower Collaboration with Modern Cloud Productivity</p>
+                                <p class="text-xs text-gray-600 leading-relaxed mb-6 font-light">Transform workforce operations with seamless Microsoft 365 deployments, secure cloud collaboration, advanced threat protection, and automated administration.</p>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestMandate('Microsoft Office 365 Solutions')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-all group">
+                                    <span>Request This Mandate</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEPARATE VIEW FOR TAX & BOOKKEEPING BUNDLES -->
+        <div id="taxServicesView" class="hidden bg-[#f7f9f9] min-h-screen py-12 px-4 sm:px-6 lg:px-8 text-gray-800">
+            <div class="max-w-7xl mx-auto animate-fade-in-up">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 pb-6 border-b border-gray-300">
+                    <div>
+                        <button onclick="showMainPage()" class="inline-flex items-center text-xs font-semibold text-slateTheme-700 hover:text-slateTheme-900 mb-3 transition-colors cursor-pointer group">
+                            <i class="fa-solid fa-arrow-left mr-2 transition-transform group-hover:-translate-x-1"></i> Back to Main Site
+                        </button>
+                        <h1 class="text-3xl sm:text-4xl serif-title font-normal text-slateTheme-900 tracking-wide">Account Bookkeeping & Taxation Packages</h1>
+                        <p class="text-gray-600 text-sm mt-2 max-w-2xl">Transparent accounting bundles designed for new businesses, growing SMEs, active enterprises, and advanced support needs under UAE regulations.</p>
+                    </div>
+                    <button onclick="showMainPage(); scrollToSection('contact');" class="mt-4 md:mt-0 btn-slate px-6 py-3 rounded-sm font-semibold text-xs uppercase tracking-wider transition-all shadow-md hover:scale-105">
+                        Inquire Custom Tax Solution
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Tax Bundle 1 -->
+                    <div class="bg-white border border-gray-200 shadow-sm rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.05s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/tax-startup.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=Startup+Bookkeeping'" alt="Startup" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider rounded-sm shadow-sm">50% OFF</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-gray-400 block mb-1">Startup Basics Bundle</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">Accounting & Bookkeeping</h2>
+                                <p class="text-xs text-gray-500 mb-4 pb-4 border-b border-gray-100">Up to 25 transactions in a year</p>
+                                <div class="space-y-4 text-xs mb-6">
+                                    <div>
+                                        <span class="font-semibold text-slateTheme-900 block mb-1">Core Accounting</span>
+                                        <ul class="space-y-1.5 text-gray-600">
+                                            <li>• Sales, purchases & expense invoices posting</li>
+                                            <li>• Bank & credit card reconciliation</li>
+                                            <li>• Journals posting & closing</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <span class="font-semibold text-slateTheme-900 block mb-1">Tax & Support</span>
+                                        <ul class="space-y-1.5 text-gray-600">
+                                            <li>• Corporate tax registration & filing</li>
+                                            <li>• Phone & online support</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestTaxBundle('Startup Basics Bundle')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                                    <span>Inquire Now</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tax Bundle 2 -->
+                    <div class="bg-white border-2 border-slateTheme-700 shadow-md rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/tax-sme.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=SME+Bookkeeping'" alt="SME" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-amber-600 text-white text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider rounded-sm shadow-xs">BEST SELLER</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-slateTheme-700 font-bold block mb-1">SMEs Bundle</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">Accounting & Bookkeeping</h2>
+                                <p class="text-xs text-gray-500 mb-4 pb-4 border-b border-gray-100">Up to 100 transactions in a year</p>
+                                <div class="space-y-4 text-xs mb-6">
+                                    <div>
+                                        <span class="font-semibold text-slateTheme-900 block mb-1">Core Accounting</span>
+                                        <ul class="space-y-1.5 text-gray-600">
+                                            <li>• Full ledger posting & reconciliation</li>
+                                            <li>• Profit & Loss & Balance sheet schedules</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <span class="font-semibold text-slateTheme-900 block mb-1">Tax & Compliance</span>
+                                        <ul class="space-y-1.5 text-gray-600">
+                                            <li>• VAT registration & return filing</li>
+                                            <li>• Corporate tax consultancy</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestTaxBundle('SMEs Bundle')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                                    <span>Inquire Now</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tax Bundle 3 -->
+                    <div class="bg-white border border-gray-200 shadow-sm rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.15s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/tax-advance.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=Advance+Accounting'" alt="Advance" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider rounded-sm shadow-sm">50% OFF</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-gray-400 block mb-1">Advance Accounting Bundle</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">Accounting & Bookkeeping</h2>
+                                <p class="text-xs text-gray-500 mb-4 pb-4 border-b border-gray-100">Up to 300 transactions in a year</p>
+                                <div class="space-y-4 text-xs mb-6">
+                                    <div>
+                                        <span class="font-semibold text-slateTheme-900 block mb-1">Reporting & Tax</span>
+                                        <ul class="space-y-1.5 text-gray-600">
+                                            <li>• Monthly MIS reports & cash flow</li>
+                                            <li>• VAT & Corporate tax filing + AML registration</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestTaxBundle('Advance Accounting Bundle')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                                    <span>Inquire Now</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tax Bundle 4 -->
+                    <div class="bg-white border border-gray-200 shadow-sm rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/tax-cfo.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=CFO+Package'" alt="CFO" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider rounded-sm shadow-sm">50% OFF</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-gray-400 block mb-1">CFO Package</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">Accounting & Bookkeeping</h2>
+                                <p class="text-xs text-gray-500 mb-4 pb-4 border-b border-gray-100">Up to 500 transactions in a year</p>
+                                <div class="space-y-4 text-xs mb-6">
+                                    <div>
+                                        <span class="font-semibold text-slateTheme-900 block mb-1">Executive Advisory</span>
+                                        <ul class="space-y-1.5 text-gray-600">
+                                            <li>• Full audit report & AML training</li>
+                                            <li>• Dedicated CFO services & monthly strategy</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestTaxBundle('CFO Package')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                                    <span>Inquire Now</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEPARATE VIEW FOR DIGITAL MARKETING PACKAGES -->
+        <div id="marketingServicesView" class="hidden bg-[#f7f9f9] min-h-screen py-12 px-4 sm:px-6 lg:px-8 text-gray-800">
+            <div class="max-w-7xl mx-auto animate-fade-in-up">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 pb-6 border-b border-gray-300">
+                    <div>
+                        <button onclick="showMainPage()" class="inline-flex items-center text-xs font-semibold text-slateTheme-700 hover:text-slateTheme-900 mb-3 transition-colors cursor-pointer group">
+                            <i class="fa-solid fa-arrow-left mr-2 transition-transform group-hover:-translate-x-1"></i> Back to Main Site
+                        </button>
+                        <h1 class="text-3xl sm:text-4xl serif-title font-normal text-slateTheme-900 tracking-wide">Digital Marketing & Growth Packages</h1>
+                        <p class="text-gray-600 text-sm mt-2 max-w-2xl">High-performance digital marketing strategies tailored for UAE businesses, covering SEO, social media management, paid ads, and integrated growth campaigns.</p>
+                    </div>
+                    <button onclick="showMainPage(); scrollToSection('contact');" class="mt-4 md:mt-0 btn-slate px-6 py-3 rounded-sm font-semibold text-xs uppercase tracking-wider transition-all shadow-md hover:scale-105">
+                        Inquire Custom Marketing Plan
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Marketing Package 1 -->
+                    <div class="bg-white border border-gray-200 shadow-sm rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.05s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/mkt-starter.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=Starter+Digital'" alt="Starter" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-slateTheme-900 text-[#d4af37] text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider rounded-sm shadow-sm">STARTER</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-gray-400 block mb-1">Starter Growth Plan</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">Starter Digital Package</h2>
+                                <p class="text-xs text-gray-500 mb-4 pb-4 border-b border-gray-100">AED 3,000 / month</p>
+                                <div class="space-y-4 text-xs mb-6">
+                                    <div>
+                                        <span class="font-semibold text-slateTheme-900 block mb-1">Search & Social</span>
+                                        <ul class="space-y-1.5 text-gray-600">
+                                            <li>• Up to 5 optimized website pages (SEO)</li>
+                                            <li>• Keyword research & competitor analysis</li>
+                                            <li>• 8 static social posts per month (FB/IG)</li>
+                                            <li>• 1 Meta Ads campaign setup</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestMarketingBundle('Starter Digital Package')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                                    <span>Inquire Now</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Marketing Package 2 -->
+                    <div class="bg-white border-2 border-slateTheme-700 shadow-md rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/mkt-growth.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=Business+Growth'" alt="Growth" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-amber-600 text-white text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider rounded-sm shadow-xs">BEST SELLER</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-slateTheme-700 font-bold block mb-1">SME Growth Retainer</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">Business Growth Package</h2>
+                                <p class="text-xs text-gray-500 mb-4 pb-4 border-b border-gray-100">AED 7,500 / month</p>
+                                <div class="space-y-4 text-xs mb-6">
+                                    <div>
+                                        <span class="font-semibold text-slateTheme-900 block mb-1">Comprehensive Execution</span>
+                                        <ul class="space-y-1.5 text-gray-600">
+                                            <li>• SEO Business Package (up to 10 pages)</li>
+                                            <li>• Social Media Business Package (12 posts + reels)</li>
+                                            <li>• Google Ads campaign setup & optimization</li>
+                                            <li>• Landing page conversion optimization support</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestMarketingBundle('Business Growth Package')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                                    <span>Inquire Now</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Marketing Package 3 -->
+                    <div class="bg-white border border-gray-200 shadow-sm rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.15s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/mkt-performance.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=Performance+Marketing'" alt="Performance" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider rounded-sm shadow-sm">POPULAR</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-gray-400 block mb-1">Advanced Scaling</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">Performance Package</h2>
+                                <p class="text-xs text-gray-500 mb-4 pb-4 border-b border-gray-100">AED 12,000 / month</p>
+                                <div class="space-y-4 text-xs mb-6">
+                                    <div>
+                                        <span class="font-semibold text-slateTheme-900 block mb-1">Multi-Channel Dominance</span>
+                                        <ul class="space-y-1.5 text-gray-600">
+                                            <li>• Premium SEO Package (40 keywords)</li>
+                                            <li>• Premium Social Media Package (3 platforms)</li>
+                                            <li>• Google Ads + Meta Ads management</li>
+                                            <li>• Conversion funnel optimization</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestMarketingBundle('Performance Package')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                                    <span>Inquire Now</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Marketing Package 4 -->
+                    <div class="bg-white border border-gray-200 shadow-sm rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/mkt-enterprise.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=Enterprise+Omnichannel'" alt="Enterprise" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 uppercase tracking-wider rounded-sm shadow-sm">CUSTOM</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-gray-400 block mb-1">Enterprise Retainer</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">Enterprise Omnichannel</h2>
+                                <p class="text-xs text-gray-500 mb-4 pb-4 border-b border-gray-100">Custom / AED 20,000+ / mo</p>
+                                <div class="space-y-4 text-xs mb-6">
+                                    <div>
+                                        <span class="font-semibold text-slateTheme-900 block mb-1">Full-Scale Execution</span>
+                                        <ul class="space-y-1.5 text-gray-600">
+                                            <li>• Dedicated marketing squad & senior strategist</li>
+                                            <li>• Video production & content creation</li>
+                                            <li>• Multi-market GCC campaign management</li>
+                                            <li>• Real-time analytics dashboards</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestMarketingBundle('Enterprise Omnichannel')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                                    <span>Inquire Now</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEPARATE VIEW FOR EVENT MANAGEMENT & CORPORATE TRAINING PACKAGES -->
+        <div id="eventTrainingServicesView" class="hidden bg-[#f7f9f9] min-h-screen py-12 px-4 sm:px-6 lg:px-8 text-gray-800">
+            <div class="max-w-7xl mx-auto animate-fade-in-up">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 pb-6 border-b border-gray-300">
+                    <div>
+                        <button onclick="showMainPage()" class="inline-flex items-center text-xs font-semibold text-slateTheme-700 hover:text-slateTheme-900 mb-3 transition-colors cursor-pointer group">
+                            <i class="fa-solid fa-arrow-left mr-2 transition-transform group-hover:-translate-x-1"></i> Back to Main Site
+                        </button>
+                        <h1 class="text-3xl sm:text-4xl serif-title font-normal text-slateTheme-900 tracking-wide">Event Management & Corporate Training Packages</h1>
+                        <p class="text-gray-600 text-sm mt-2 max-w-2xl">Flawless corporate event orchestration, professional conferences, and specialized workforce training workshops designed to elevate organizational capability across the UAE.</p>
+                    </div>
+                    <button onclick="showMainPage(); scrollToSection('contact');" class="mt-4 md:mt-0 btn-slate px-6 py-3 rounded-sm font-semibold text-xs uppercase tracking-wider transition-all shadow-md hover:scale-105">
+                        Inquire Custom Event or Training
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- EVENT/TRAINING TIER 1 -->
+                    <div class="bg-white border border-gray-200 shadow-sm rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.05s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/evt-gala.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=Corporate+Events'" alt="Gala" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-slateTheme-900 text-[#d4af37] text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider rounded-sm shadow-sm">01</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-slateTheme-700 font-bold block mb-1">Corporate Events</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">Corporate Summit & Gala Production</h2>
+                                <p class="text-xs text-amber-600 font-medium mb-4 pb-4 border-b border-gray-100">End-to-End Event Management</p>
+                                <div class="space-y-4 text-xs mb-6">
+                                    <div>
+                                        <span class="font-semibold text-slateTheme-900 block mb-1">Key Deliverables</span>
+                                        <ul class="space-y-1.5 text-gray-600">
+                                            <li>• Venue sourcing & thematic stage design</li>
+                                            <li>• Technical AV production, lighting & live streaming</li>
+                                            <li>• Guest registration & VIP hospitality management</li>
+                                            <li>• Post-event media compilation & reporting</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestEventTrainingBundle('Corporate Summit & Gala Production')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                                    <span>Inquire Now</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EVENT/TRAINING TIER 2 -->
+                    <div class="bg-white border-2 border-slateTheme-700 shadow-md rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/evt-training.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=Corporate+Training'" alt="Training" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-amber-600 text-white text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider rounded-sm shadow-xs">POPULAR</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-slateTheme-700 font-bold block mb-1">Talent Development</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">Executive Upskilling Workshop</h2>
+                                <p class="text-xs text-amber-600 font-medium mb-4 pb-4 border-b border-gray-100">Professional Workforce Training</p>
+                                <div class="space-y-4 text-xs mb-6">
+                                    <div>
+                                        <span class="font-semibold text-slateTheme-900 block mb-1">Key Deliverables</span>
+                                        <ul class="space-y-1.5 text-gray-600">
+                                            <li>• Tailored modules in digital transformation & IT governance</li>
+                                            <li>• Leadership coaching & strategic management</li>
+                                            <li>• Interactive hands-on exercises & case studies</li>
+                                            <li>• Certified course completion certificates for attendees</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestEventTrainingBundle('Executive Upskilling Workshop')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                                    <span>Inquire Now</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EVENT/TRAINING TIER 3 -->
+                    <div class="bg-white border border-gray-200 shadow-sm rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.15s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/evt-launch.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=Brand+Activation'" alt="Launch" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-slateTheme-900 text-[#d4af37] text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider rounded-sm shadow-sm">03</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-slateTheme-700 font-bold block mb-1">Brand Experiences</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">Product Launch & Brand Activation</h2>
+                                <p class="text-xs text-amber-600 font-medium mb-4 pb-4 border-b border-gray-100">High-Impact Experiential Events</p>
+                                <div class="space-y-4 text-xs mb-6">
+                                    <div>
+                                        <span class="font-semibold text-slateTheme-900 block mb-1">Key Deliverables</span>
+                                        <ul class="space-y-1.5 text-gray-600">
+                                            <li>• Immersive product staging & interactive booths</li>
+                                            <li>• Influencer & media invitation management</li>
+                                            <li>• On-site brand PR coordination</li>
+                                            <li>• Promotional collateral & merchandise production</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestEventTrainingBundle('Product Launch & Brand Activation')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                                    <span>Inquire Now</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EVENT/TRAINING TIER 4 -->
+                    <div class="bg-white border border-gray-200 shadow-sm rounded-none overflow-hidden flex flex-col justify-between relative it-card-hover animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="h-44 overflow-hidden bg-gray-100 relative">
+                            <img src="assets/evt-retreat.jpg" onerror="this.src='https://placehold.co/600x400/40514e/FFFFFF?text=Team+Retreat'" alt="Retreat" class="w-full h-full object-cover">
+                            <div class="absolute top-3 right-3 bg-slateTheme-900 text-[#d4af37] text-[10px] font-bold px-2.5 py-0.5 uppercase tracking-wider rounded-sm shadow-sm">04</div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <span class="text-[10px] uppercase font-mono tracking-wider text-slateTheme-700 font-bold block mb-1">Team Building</span>
+                                <h2 class="serif-title text-xl text-slateTheme-900 font-bold mb-1">Annual Corporate Retreat & Training</h2>
+                                <p class="text-xs text-amber-600 font-medium mb-4 pb-4 border-b border-gray-100">Cohesive Workforce Retreats</p>
+                                <div class="space-y-4 text-xs mb-6">
+                                    <div>
+                                        <span class="font-semibold text-slateTheme-900 block mb-1">Key Deliverables</span>
+                                        <ul class="space-y-1.5 text-gray-600">
+                                            <li>• Resort coordination & itinerary planning</li>
+                                            <li>• Team-building exercises & collaborative training</li>
+                                            <li>• Motivational speaker sessions & workshops</li>
+                                            <li>• Complete travel & logistics management</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <button onclick="requestEventTrainingBundle('Annual Corporate Retreat & Training')" class="w-full bg-[#263331] hover:bg-[#40514e] text-white py-2.5 rounded-sm text-xs font-semibold flex items-center justify-center gap-2 transition-colors">
+                                    <span>Inquire Now</span>
                                     <i class="fa-solid fa-arrow-right text-[10px]"></i>
                                 </button>
                             </div>
