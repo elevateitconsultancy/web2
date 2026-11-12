@@ -31,7 +31,7 @@ if (typeof tailwind !== 'undefined') {
     };
 }
 
-// Smooth scroll to section helper
+// Smooth scroll helper
 function scrollToSection(id) {
     const section = document.getElementById(id);
     if (section) {
@@ -65,7 +65,6 @@ function showTaxServicesPage() { switchServiceView('taxServicesView'); }
 function showMarketingServicesPage() { switchServiceView('marketingServicesView'); }
 function showEventTrainingServicesPage() { switchServiceView('eventTrainingServicesView'); }
 
-// Mandate / Package Inquiry Helpers
 function requestInquiry(prefix, itemName) {
     showMainPage();
     scrollToSection('contact');
@@ -91,12 +90,7 @@ function requestEventTrainingBundle(packageName) {
     requestInquiry('I would like to inquire about the Event Management & Training package', packageName);
 }
 
-function closeServiceModal() {
-    const modal = document.getElementById('serviceModal');
-    if (modal) modal.classList.add('hidden');
-}
-
-// Chatbot Toggle & Interactions (XSS-safe using textContent)
+// Chatbot interactions
 function toggleChatbot() {
     const win = document.getElementById('chatbotWindow');
     if (!win) return;
@@ -140,6 +134,6 @@ function sendChatMessage() {
     }, 600);
 }
 
-// Formspree Initialization
+// Formspree Init
 window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
 formspree('initForm', { formElement: '#contactForm', formId: 'xoedqapz' });
