@@ -124,9 +124,9 @@ function sendChatMessage() {
         em.textContent = msg;
         const text2 = document.createTextNode('". Our team in Ajman, UAE will gladly assist. You may also contact us directly at ');
         const link = document.createElement('a');
-        link.href = 'mailto:elevateglobalconsultservices@gmail.com';
+        link.href = 'mailto:sales@elevateglobal-consultancyservices.ae';
         link.className = 'text-slateTheme-700 underline font-mono';
-        link.textContent = 'elevateglobalconsultservices@gmail.com';
+        link.textContent = 'sales@elevateglobal-consultancyservices.ae';
 
         botBubble.append(text1, em, text2, link, document.createTextNode('.'));
         chatMessages.appendChild(botBubble);
